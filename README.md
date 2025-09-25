@@ -5,20 +5,20 @@ Lab project for monitoring failed login attempts on Windows Home using Splunk Un
 
 This project demonstrates how to monitor and visualize failed login attempts on a Windows Home machine using Splunk Enterprise and Splunk Universal Forwarder. PowerShell-generated failed login events are collected into failed_logins.log and displayed in a Timechart panel on Splunk Enterprise for analysis.
 
-# Topology
+## Topology
 
 Splunk Enterprise (Indexer): 192.168.50.20
 
 Windows Home (Forwarder): 192.168.50.30
 
-# Steps to reproduce
+## Steps to reproduce
 
 Create log file on Windows Home using PowerShell:
 
 1..10 | ForEach-Object { Add-Content "C:\temp\failed_logins.log" "Failed login for user vboxuser from 192.168.50.$_" }
 
 
-# Configure inputs.conf to monitor the log:
+## Configure inputs.conf to monitor the log:
 
 [monitor://C:\temp\failed_logins.log]
 disabled = 0
@@ -26,14 +26,14 @@ index = wineventlog
 sourcetype = wineventlog
 
 
-# Add forward-server to point to Splunk Enterprise via CMD:
+## Add forward-server to point to Splunk Enterprise via CMD:
 
 "C:\Program Files\SplunkUniversalForwarder\bin\splunk.exe" add forward-server 192.168.50.30:9997 -auth admin:YourPassword
 
 
 Restart the forwarder.
 
-# Dashboard
+## Dashboard
 
 Name: Windows Failed Logins
 
@@ -45,7 +45,7 @@ index=wineventlog sourcetype=wineventlog
 
 Time picker: All time
 
-# Notes
+## Notes
 
 C:\temp folder must exist for the log file.
 
