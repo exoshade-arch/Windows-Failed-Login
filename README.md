@@ -26,8 +26,11 @@ Create log file on Windows Home using PowerShell:
 ## Configure inputs.conf to monitor the log:
 
 [monitor://C:\temp\failed_logins.log]
+
 disabled = 0
+
 index = wineventlog
+
 sourcetype = wineventlog
 
 ---
