@@ -36,6 +36,7 @@ sourcetype = wineventlog
 
 "C:\Program Files\SplunkUniversalForwarder\bin\splunk.exe" add forward-server 192.168.50.30:9997 -auth admin:YourPassword
 
+
 Restart the forwarder.
 
 ---
@@ -49,6 +50,7 @@ Panel: Timechart
 index=wineventlog sourcetype=wineventlog
 | timechart span=1m count
 
+
 Time picker: All time
 
 ---
@@ -56,5 +58,7 @@ Time picker: All time
 ## Notes
 
 C:\temp folder must exist for the log file.
+
 All testing done in isolated VM environment.
+
 Screenshots attached for visual reference of dashboard.
