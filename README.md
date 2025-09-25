@@ -48,6 +48,8 @@ Name: Windows Failed Logins
 Panel: Timechart
 
 index=wineventlog sourcetype=wineventlog
+
+
 | timechart span=1m count
 
 
