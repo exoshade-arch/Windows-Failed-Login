@@ -3,6 +3,7 @@ Lab project for monitoring failed login attempts on Windows Home using Splunk Un
 
 # Windows Failed Login Monitoring Lab
 
+## Overview
 This project demonstrates how to monitor and visualize failed login attempts on a Windows Home machine using Splunk Enterprise and Splunk Universal Forwarder. PowerShell-generated failed login events are collected into failed_logins.log and displayed in a Timechart panel on Splunk Enterprise for analysis.
 
 ---
